@@ -6,6 +6,7 @@ import {<%=model.name%>Instance, <%=model.name%>Attributes} from "<%=model.path%
 <% }) %>
 let env:string = process.env.NODE_ENV || 'development';
 let config:any = JSON.parse(fs.readFileSync(<%= configFile %>,'utf-8'))[env];
+let models:string = <%=modelPath%>;
 
 if (config.use_env_variable) {
     var sequelize: Sequelize.Connection = new Sequelize(
