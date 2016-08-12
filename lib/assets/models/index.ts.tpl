@@ -48,4 +48,4 @@ Object.keys(db).forEach(function (modelName) {
     }
 });
 
-export default db;
+export let db = db;
