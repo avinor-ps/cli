@@ -35,12 +35,12 @@ let db:DbConnection = {
 };
 
 
-fs.readdirSync(MODELS)
+fs.readdirSync(models)
     .filter(function (file) {
         return (file.indexOf('.') !== 0) && (file.slice(-3) === '.js');
     })
     .forEach(function (file) {
-        var model = sequelize['import'](path.join(MODELS, file));
+        var model = sequelize['import'](path.join(models, file));
         db[model['name']] = model;
     });
 
