@@ -32,7 +32,6 @@ let db:DbConnection = {
     Sequelize:Sequelize
 };
 
-
 fs.readdirSync(models)
     .filter(function (file) {
         return (file.indexOf('.') !== 0) && (file.slice(-3) === '.js');
@@ -48,4 +47,4 @@ Object.keys(db).forEach(function (modelName) {
     }
 });
 
-export let db = db;
+export let DB = db;
