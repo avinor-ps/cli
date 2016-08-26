@@ -24,7 +24,9 @@ if (config.use_env_variable) {
 export interface DbConnection {
 sequelize: Sequelize.Connection,
 Sequelize: Sequelize.Static,
-<% models.forEach(function(model, index){%><%=model.name%>?:Sequelize.Model<<%=model.name%>Instance,<%=model.name%>Attributes><%=((index==models.length-1) ? '' : ',')%><%})%>
+<% models.forEach(function(model, index){%>
+<%=model.name%>?:Sequelize.Model<<%=model.name%>Instance,<%=model.name%>Attributes><%=((index==models.length-1) ? '' : ',')%>
+<%})%>
 };
 
 let db:DbConnection = {
